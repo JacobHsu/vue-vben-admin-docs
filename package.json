@@ -1,0 +1,16 @@
+{
+  "name": "vue-vben-admin-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:JacobHsu/vue-vben-admin-docs.git",
+  "author": "jacobhsu <jacob.hsu.tw@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "vitepress": "^0.15.5"
+  }
+}
