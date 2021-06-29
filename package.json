@@ -11,6 +11,6 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "vitepress": "^0.15.5"
+    "vitepress": "^0.14.1"
   }
 }
