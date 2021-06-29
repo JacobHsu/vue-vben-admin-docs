@@ -34,6 +34,23 @@
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) - css 格式化
 - [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) - .env 文件 高亮
 
+.vscode\extensions.json
+
+```bash
+{
+  "recommendations": [
+    "antfu.iconify",
+    "voorjaar.windicss-intellisense",
+    "lokalise.i18n-ally",
+    "octref.vetur",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "mikestead.dotenv"
+  ]
+}
+```
+
 ## 代码获取
 
 ::: tip

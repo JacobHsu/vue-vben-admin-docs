@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "antfu.iconify",
+    "voorjaar.windicss-intellisense",
+    "lokalise.i18n-ally",
+    "octref.vetur",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "mikestead.dotenv",
+    "naumovs.color-highlight",
+  ]
+}
