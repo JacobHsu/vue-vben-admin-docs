@@ -52,9 +52,9 @@ jobs:
           git config --global user.email "vbenadmin@163.com"
           git config --global user.name "vbenAdmin"
 
-      - name: Delete gh-pages branch
-        run: |
-          git push origin --delete gh-pages
+      # - name: Delete gh-pages branch
+      #   run: |
+      #     git push origin --delete gh-pages
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
