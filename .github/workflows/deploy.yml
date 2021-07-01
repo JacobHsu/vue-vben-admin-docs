@@ -58,11 +58,17 @@ jobs:
       #   run: |
       #     git push origin --delete gh-pages
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3 #peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{secrets.DEPLOY_TOKEN}}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./.vitepress/dist
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v2.5.0
+      #   env:
+      #     ACTIONS_DEPLOY_KEY: ${{secrets.DEPLOY_TOKEN}}
+      #     PUBLISH_BRANCH: gh-pages
+      #     PUBLISH_DIR: ./.vitepress/dist
         # with:
         #   forceOrphan: true
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: ./.vitepress/dist
