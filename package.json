@@ -1,5 +1,6 @@
 {
   "name": "vue-vben-admin-docs",
+  "homepage": "https://jacobhsu.github.io/vue-vben-admin-docs/",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:JacobHsu/vue-vben-admin-docs.git",
