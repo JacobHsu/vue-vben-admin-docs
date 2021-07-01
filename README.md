@@ -11,6 +11,10 @@
 
 `yarn add @iconify/json @vueuse/core`
 
+## deploy
+
+`yarn build` .vitepress\dist
+
 ## theme
 
 blade-icons/[ri-github-line](https://blade-ui-kit.com/blade-icons/ri-github-line)
