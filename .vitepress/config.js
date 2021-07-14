@@ -93,7 +93,7 @@ function createNav() {
         },
       ],
     },
-    // { text: '插件', link: '/plugins/' },
+    { text: '插件', link: '/guide/plugins' },
     {
       text: '相关链接',
       items: [
