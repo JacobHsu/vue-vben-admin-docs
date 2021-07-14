@@ -11,6 +11,11 @@
 
 `yarn add @iconify/json @vueuse/core`
 
+## vitejs.dev
+
+[Vite 官方中文文档](https://cn.vitejs.dev/) v2.4  
+vitejs / [docs-cn](https://github.com/vitejs/docs-cn)
+
 ## deploy
 
 `yarn build` .vitepress\dist
