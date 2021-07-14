@@ -8,8 +8,11 @@
 
 ```bash
 # 在终端输入下面的命令完成安装
-yarn add ant-design-vue
+# 注意要加@next 安裝才是v2.x版的
+yarn add ant-design-vue@next
 ```
+
+ant-design-vue [Version](https://www.npmjs.com/package/ant-design-vue)
 
 ## 使用
 
