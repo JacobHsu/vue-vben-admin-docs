@@ -29,4 +29,4 @@ Vite 旨在为常见的 web 开发工作提供开箱即用的支持。在搜索�
 
 ## Rollup 插件
 
-[Vite 插件](../guide/api-plugin) 是 Rollup 插件接口的一种扩展。查看 [Rollup 插件兼容性章节](../guide/api-plugin#rollup-plugin-compatibility) 获取更多信息。
+[Vite 插件](https://cn.vitejs.dev/guide/api-plugin.html) 是 Rollup 插件接口的一种扩展。查看 [Rollup 插件兼容性章节](https://cn.vitejs.dev/guide/api-plugin.html#rollup-plugin-compatibility) 获取更多信息。
