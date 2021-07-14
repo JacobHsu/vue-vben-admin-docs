@@ -30,6 +30,18 @@ console.log(import.meta.env.VITE_PROT);
 
 ### 配置项说明
 
+vue-vite-admin\build\utils.ts
+
+npm `dotenv` 不用各處加入新的環境變數，要集中在 `.env` 檔中管理它
+
+package.json
+
+```js
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+  }
+```
+
 ### .env
 
 所有环境适用
