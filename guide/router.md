@@ -2,6 +2,16 @@
 
 项目路由配置存放于[src/router/routes](https://github.com/anncwb/vue-vben-admin/tree/main/src/router/routes) 下面。 [src/router/routes/modules](https://github.com/anncwb/vue-vben-admin/tree/main/src/router/routes/modules)用于存放路由模块,在该文件下内的文件会自动注册
 
+vue-ts-vite-admin> `yarn add vue-router@next`  
+
+package.json
+```js
+  "dependencies": {
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.10"
+  },
+```
+
 ## 配置
 
 ### 模块说明
