@@ -557,3 +557,49 @@ export default {
   },
 };
 ```
+
+## vite路径参数配置
+
+src\main.ts
+
+```js
+import router, { setupRouter } from "/@/router";
+```
+
+vite.config.ts
+```ts
+export default ({ command, mode }: ConfigEnv): UserConfig => {
+  return {
+    base: VITE_PUBLIC_PATH,
+    root,
+    resolve: {
+      alias: [
+
+        // /@/xxxx => src/xxxx
+        {
+          find: /\/@\//,
+          replacement: pathResolve('src') + '/',
+        },
+        // /#/xxxx => types/xxxx
+        {
+          find: /\/#\//,
+          replacement: pathResolve('types') + '/',
+        },
+        // ['@vue/compiler-sfc', '@vue/compiler-sfc/dist/compiler-sfc.esm-browser.js'],
+      ],
+    },
+```
+
+tsconfig.json
+
+```ts
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": ".",
+    "paths": {
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
+    }
+  },
+```
