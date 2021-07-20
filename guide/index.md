@@ -270,10 +270,3 @@ yarn
 └── windi.config.ts # windcss配置文件
 
 ```
-
-## npm说明
-
-### [vue-types](https://www.npmjs.com/package/vue-types)
-> Prop type definitions for Vue.js.  
-
-`src\utils\propTypes.ts`

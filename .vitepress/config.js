@@ -94,6 +94,7 @@ function createNav() {
       ],
     },
     { text: '插件', link: '/other/plugins' },
+    { text: 'NPM', link: '/other/npm' },
     {
       text: '相关链接',
       items: [
