@@ -95,6 +95,7 @@ function createNav() {
     },
     { text: '插件', link: '/other/plugins' },
     { text: 'NPM', link: '/other/npm' },
+    { text: 'TS', link: '/other/typescript-global' },
     {
       text: '相关链接',
       items: [
