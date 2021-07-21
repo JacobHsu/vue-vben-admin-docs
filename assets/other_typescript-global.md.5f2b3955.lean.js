@@ -1,1 +1,0 @@
-import{o as e,c as s,a}from"./app.1563fe42.js";const t='{"title":"TS扩展全局变量类型推导","description":"","frontmatter":{},"headers":[{"level":2,"title":"References","slug":"references"}],"relativePath":"other/typescript-global.md","lastUpdated":1626855238200}',n={},r=a('',10);n.render=function(a,t,n,p,o,c){return e(),s("div",null,[r])};export default n;export{t as __pageData};
