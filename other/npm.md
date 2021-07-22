@@ -56,8 +56,15 @@ export const useAppStore = defineStore({
 });
 ```
 
+## [@vueuse/core](https://www.npmjs.com/package/@vueuse/core)
+
+https://github.com/JacobHsu/vueuse-docs  
+
+[useTitle](https://vueuse.org/core/usetitle/#usetitle)  
+src\hooks\web\useTitle.ts
+
 ## [lodash-es](https://www.npmjs.com/package/lodash-es)
-> The Lodash library exported as ES modules.
+> The Lodash library exported as ES modules. Lodash TS版
 
 ES Modules 是用于处理模块的 ECMAScript 标准。
 
@@ -69,6 +76,16 @@ src\store\modules\app.ts
 import { Persistent } from '/@/utils/cache/persistent';
  projectConfig: Persistent.getLocal(PROJ_CFG_KEY),
 ```
+
+[lodash](https://lodash.com/docs/4.17.15#omit)
+
+src\components\Dropdown\src\Dropdown.vue
+
+```js
+import { omit } from 'lodash-es';  // Could not find a declaration file for module 'lodash-es'
+```
+
+`yarn add @types/lodash-es -D`
 
 ## [@types/node](https://www.npmjs.com/package/@types/node)
 > This package contains type definitions for Node.js
@@ -83,3 +100,21 @@ resolve(process.cwd(), '.', dir);
 > JavaScript library of crypto standards.
 
 `src\utils\cipher.ts`
+
+## [vue-i18n](https://kazupon.github.io/vue-i18n/)
+
+Cannot find module 'vue-i18n' or its corresponding type declarations.
+
+vite.config.ts
+
+```js
+  return {
+    base: VITE_PUBLIC_PATH,
+    root,
+    resolve: {
+      alias: [
+        {
+          find: 'vue-i18n',
+          replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
+        },
+```
