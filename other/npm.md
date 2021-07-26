@@ -1,5 +1,17 @@
 # npm
 
+## [@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
+> Provides Vue 3 JSX & TSX support with HMR.  
+
+`build\vite\plugin\index.ts`  
+export function createVitePlugins `vueJsx()`  
+
+vite.config.ts
+
+```js
+  plugins: createVitePlugins(viteEnv, isBuild),
+```
+
 ## [vue-types](https://www.npmjs.com/package/vue-types)
 > Prop type definitions for Vue.js.  
 
