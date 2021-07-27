@@ -1,6 +1,6 @@
 # npm
 
-vitejs -> router -> UI(ant-design-vue) -> locales -> store
+vitejs -> router -> UI(ant-design-vue) -> store -> locales
 
 ## [@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
 > Provides Vue 3 JSX & TSX support with HMR.  
@@ -24,7 +24,7 @@ vite.config.ts
 `yarn add vue-router@next`
 
 ::: tip
-注意 先安裝 `ant-design-vue` 再按裝 `vue-i18n`
+注意 先安裝 `ant-design-vue` 再按裝 `vue-i18n`  
 才有locales要用依賴 locales\useLocale.ts `moment`先安裝好
 :::
 
@@ -102,8 +102,8 @@ https://github.com/JacobHsu/vueuse-docs
 src\hooks\web\useTitle.ts
 
 ## [lodash-es](https://www.npmjs.com/package/lodash-es)
-> The Lodash library exported as ES modules. Lodash TS版 
-隨 ant-design-vue 安裝  
+> The Lodash library exported as ES modules. Lodash TS版  
+隨 ant-design-vue 安裝  但type檢查要另外安裝 `@types/lodash-es`  
 ES Modules 是用于处理模块的 ECMAScript 标准。
 
 `src\utils\cache\persistent.ts`
@@ -134,10 +134,56 @@ vite.config.ts
 resolve(process.cwd(), '.', dir);
 ```
 
+## [vite-plugin-theme](https://www.npmjs.com/package/vite-plugin-theme)
+> Vite plugin for dynamically changing the theme color of the interface
+
+::: tip
+vite-plugin-xx 要至`build\vite\plugin\` vitePlugins.push 加載
+與到 `tsconfig.json` 設定 types
+:::
+
+src\logics\theme\index.ts  
+`yarn add vite-plugin-theme -D`  
+
+build\vite\plugin\theme.ts [viteThemePlugin](https://www.npmjs.com/package/vite-plugin-theme)
+
+build\vite\plugin\index.ts
+
+```js
+ //vite-plugin-theme
+  vitePlugins.push(configThemePlugin(isBuild));
+```
+
+> Uncaught ReferenceError: __COLOR_PLUGIN_OUTPUT_FILE_NAME__ is not defined
+
+src\logics\theme\dark.ts
+
+```js
+import { darkCssIsReady, loadDarkThemeCss } from 'vite-plugin-theme/es/client';
+```
+
+tsconfig.json
+
+```js
+  "compilerOptions": {
+    ...
+    "typeRoots": ["./node_modules/@types/", "./types"],
+```
+
 ## [crypto-js](https://www.npmjs.com/package/crypto-js)
 > JavaScript library of crypto standards.
 
 `src\utils\cipher.ts`
+
+src\utils\cache\storageCache.ts
+
+```js
+import type { EncryptionParams } from '/@/utils/cipher';
+import { AesEncryption } from '/@/utils/cipher';
+```
+
+`yarn add crypto-js`  
+`yarn add @types/crypto-js -D`  
 
 ## [vue-i18n](https://kazupon.github.io/vue-i18n/)
 
@@ -156,3 +202,5 @@ vite.config.ts
           replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
         },
 ```
+
+
