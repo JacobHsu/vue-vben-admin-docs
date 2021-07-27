@@ -1,5 +1,7 @@
 # npm
 
+vitejs -> router -> UI(ant-design-vue) -> locales -> store
+
 ## [@vitejs/plugin-vue-jsx](https://www.npmjs.com/package/@vitejs/plugin-vue-jsx)
 > Provides Vue 3 JSX & TSX support with HMR.  
 
@@ -20,6 +22,26 @@ vite.config.ts
 ## [vue-router](https://www.npmjs.com/package/vue-router)  
 
 `yarn add vue-router@next`
+
+::: tip
+注意 先安裝 `ant-design-vue` 再按裝 `vue-i18n`
+才有locales要用依賴 locales\useLocale.ts `moment`先安裝好
+:::
+
+yarn.lock
+
+```js
+ant-design-vue@^2.2.2:
+  dependencies:
+    lodash "^4.17.21"
+    lodash-es "^4.17.15"
+    moment "^2.27.0"
+    omit.js "^2.0.0"
+```
+
+## [ant-design-vue](https://antdv.com/)
+
+`yarn add ant-design-vue@next`
 
 ## [pinia](https://www.npmjs.com/package/pinia)
 > Intuitive, type safe and flexible Store for Vue  [Pinia Dev](https://pinia.esm.dev/)
@@ -80,8 +102,8 @@ https://github.com/JacobHsu/vueuse-docs
 src\hooks\web\useTitle.ts
 
 ## [lodash-es](https://www.npmjs.com/package/lodash-es)
-> The Lodash library exported as ES modules. Lodash TS版
-
+> The Lodash library exported as ES modules. Lodash TS版 
+隨 ant-design-vue 安裝  
 ES Modules 是用于处理模块的 ECMAScript 标准。
 
 `src\utils\cache\persistent.ts`
