@@ -16,7 +16,9 @@ package.json
 
 ### 模块说明
 
-在[src/router/routes/modules](https://github.com/anncwb/vue-vben-admin/tree/main/src/router/routes/modules)内的一个`.ts`文件会被视为一个路由模块。
+在[src/router/routes/modules](https://github.com/anncwb/vue-vben-admin/tree/main/src/router/routes/modules)内的一个`.ts`文件会被视为一个路由模块。  
+
+router\routes\index.ts `import.meta.globEager('./modules/**/*.ts')`  
 
 一个路由模块包含以下结构
 

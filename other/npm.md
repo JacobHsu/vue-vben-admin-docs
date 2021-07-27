@@ -17,6 +17,10 @@ vite.config.ts
 
 `src\utils\propTypes.ts`
 
+## [vue-router](https://www.npmjs.com/package/vue-router)  
+
+`yarn add vue-router@next`
+
 ## [pinia](https://www.npmjs.com/package/pinia)
 > Intuitive, type safe and flexible Store for Vue  [Pinia Dev](https://pinia.esm.dev/)
 
