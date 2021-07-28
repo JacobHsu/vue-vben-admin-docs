@@ -189,6 +189,8 @@ import { AesEncryption } from '/@/utils/cipher';
 
 Cannot find module 'vue-i18n' or its corresponding type declarations.
 
+`yarn add vue-i18n@next`  
+
 vite.config.ts
 
 ```js
@@ -203,4 +205,49 @@ vite.config.ts
         },
 ```
 
+## [commitizen](https://www.npmjs.com/package/commitizen)  
 
+`yarn add commitizen -D`
+
+commitizen@^4.0.3, commitizen@^4.2.4:
+ dependencies:
+  inquirer "6.5.2"
+
+[inquirer](https://www.npmjs.com/package/inquirer)
+> A collection of common interactive command line user interfaces.
+
+## [@iconify/iconify](https://www.npmjs.com/package/@iconify/iconify)
+
+vite.config.ts
+
+```js
+    // The vite plugin used by the project. The quantity is large, so it is separately extracted and managed
+    plugins: createVitePlugins(viteEnv, isBuild),
+
+    optimizeDeps: {
+      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
+      include: [
+        '@iconify/iconify',
+        'ant-design-vue/es/locale/zh_CN',
+        'moment/dist/locale/zh-cn',
+        'ant-design-vue/es/locale/en_US',
+        'moment/dist/locale/eu',
+      ],
+      exclude: ['vue-demi', 'consolidate'],
+    },
+```
+
+[@purge-icons/generated](https://www.npmjs.com/package/@purge-icons/generated)
+
+`yarn add @purge-icons/generated -D`
+
+src\components\Icon\src\Icon.vue
+
+```js
+import Iconify from '@purge-icons/generated';
+```
+
+::: warning
+error An unexpected error occurred: `"EPERM: operation not permitted, unlink 'C:\\vue-vite-admin\\node_modules\\vite\\node_modules\\esbuild\\esbuild.exe'"`.  
+要關閉運行中的程式 再進行安裝NPM
+:::
