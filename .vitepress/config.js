@@ -96,8 +96,10 @@ function createNav() {
     { text: '插件', link: '/other/plugins' },
     { text: 'NPM', link: '/other/npm' },
     { text: 'Build', link: '/other/build' },
+    { text: 'Router', link: '/other/router' },
     { text: 'CSS', link: '/other/css' },
     { text: 'TS', link: '/other/typescript-global' },
+    { text: 'QA', link: '/other/qa' },
     {
       text: '相关链接',
       items: [
