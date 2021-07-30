@@ -1,1 +1,0 @@
-import{o as n,c as s,a}from"./app.54a6f769.js";const t='{"title":"vite","description":"","frontmatter":{},"headers":[{"level":2,"title":"vite.config.ts","slug":"vite-config-ts"}],"relativePath":"other/build.md","lastUpdated":1627551455974}',e={},p=a('',13);e.render=function(a,t,e,o,c,i){return n(),s("div",null,[p])};export default e;export{t as __pageData};
