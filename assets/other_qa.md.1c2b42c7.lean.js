@@ -1,0 +1,1 @@
+import{o as e,c as t,a}from"./app.2ee97bb8.js";const o='{"title":"QA","description":"","frontmatter":{},"relativePath":"other/qa.md","lastUpdated":1627891115731}',r={},c=a('',4);r.render=function(a,o,r,d,n,l){return e(),t("div",null,[c])};export default r;export{o as __pageData};
