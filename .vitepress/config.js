@@ -98,6 +98,7 @@ function createNav() {
     { text: 'Build', link: '/other/build' },
     { text: 'Router', link: '/other/router' },
     { text: 'CSS', link: '/other/css' },
+    { text: 'antdv', link: '/other/antdv' },
     { text: 'TS', link: '/other/typescript-global' },
     { text: 'QA', link: '/other/qa' },
     {
