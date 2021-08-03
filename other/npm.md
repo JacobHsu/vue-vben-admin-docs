@@ -134,26 +134,6 @@ vite.config.ts
 resolve(process.cwd(), '.', dir);
 ```
 
-## [vite-plugin-theme](https://www.npmjs.com/package/vite-plugin-theme)
-> Vite plugin for dynamically changing the theme color of the interface
-
-::: tip
-vite-plugin-xx 要至`build\vite\plugin\` vitePlugins.push 加載
-與到 `tsconfig.json` 設定 types
-:::
-
-src\logics\theme\index.ts  
-`yarn add vite-plugin-theme -D`  
-
-build\vite\plugin\theme.ts [viteThemePlugin](https://www.npmjs.com/package/vite-plugin-theme)
-
-build\vite\plugin\index.ts
-
-```js
- //vite-plugin-theme
-  vitePlugins.push(configThemePlugin(isBuild));
-```
-
 > Uncaught ReferenceError: __COLOR_PLUGIN_OUTPUT_FILE_NAME__ is not defined
 
 src\logics\theme\dark.ts
@@ -251,3 +231,30 @@ import Iconify from '@purge-icons/generated';
 error An unexpected error occurred: `"EPERM: operation not permitted, unlink 'C:\\vue-vite-admin\\node_modules\\vite\\node_modules\\esbuild\\esbuild.exe'"`.  
 要關閉運行中的程式 再進行安裝NPM
 :::
+
+## [axios](https://www.npmjs.com/package/axios)
+
+src\utils\http\axios\index.ts
+`import type { AxiosResponse } from 'axios';`
+
+## [http-server](https://www.npmjs.com/package/http-server)
+
+http-server is a simple, zero-configuration command-line http server. 
+
+`yarn add http-server`  
+
+http-server@^0.12.3:
+ dependencies:
+  union "~0.5.0"
+
+union@~0.5.0:
+  dependencies:
+      qs "^6.4.0"
+
+[qs](https://www.npmjs.com/package/qs)
+> A querystring parsing and stringifying library with some added security.
+
+"devDependencies": {
+  "@types/qs": "^6.9.7",
+
+`yarn add @types/qs -D`  
