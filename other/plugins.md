@@ -71,7 +71,7 @@ build\vite\plugin\index.ts
   vitePlugins.push(configThemePlugin(isBuild));
 ```
 
-### [vite-plugin-svg-icons](https://www.npmjs.com/packagevite-plugin-svg-icons)
+### [vite-plugin-svg-icons](https://www.npmjs.com/package/vite-plugin-svg-icons)
 
 `yarn add vite-plugin-svg-icons -D`  
 
@@ -91,10 +91,26 @@ import SvgIconsPlugin from 'vite-plugin-svg-icons';
     iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
 ```
 
+src/main.ts
+
+```js
+// Register icon sprite
+import 'virtual:svg-icons-register';
+```
+
+
+> IconPicker.vue:115 Uncaught ReferenceError: Cannot access 'Icon' before initialization at IconPicker.vue:115
+
+Get all SymbolId  
+
 src\components\Icon\src\IconPicker.vue
 
 ```js
 import svgIcons from 'virtual:svg-icons-names';
+// 使用前必須引入  import { SvgIcon } from '/@/components/Icon'; 見NPM官方文檔
+// 但這在 src\views\sys\login\Login.vue 的 
+// AppDarkModeToggle } from '/@/components/Application'; AppDarkModeToggle 之中
+// 所以 import { AppLocalePicker, AppDarkModeToggle } from '/@/components/Application'; 要一併使用
 ```
 
 ## 社区插件

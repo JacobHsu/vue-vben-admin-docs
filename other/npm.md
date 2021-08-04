@@ -258,3 +258,23 @@ union@~0.5.0:
   "@types/qs": "^6.9.7",
 
 `yarn add @types/qs -D`  
+
+## [resize-observer-polyfill](https://www.npmjs.com/package/resize-observer-polyfill)
+
+> A polyfill for the Resize Observer API.
+
+`yarn add resize-observer-polyfill`  
+
+utils\event\index.ts
+
+`import ResizeObserver from 'resize-observer-polyfill';`
+
+## [zxcvbn-ts](https://www.npmjs.com/package/@zxcvbn-ts/core)
+
+> zxcvbn is a password strength estimator inspired by password crackers.
+
+`yarn add @zxcvbn-ts/core`
+
+src\components\StrengthMeter\src\StrengthMeter.vue
+
+`import { zxcvbn } from '@zxcvbn-ts/core';`
