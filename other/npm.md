@@ -297,3 +297,47 @@ src\components\Qrcode\src\Qrcode.vue
 `yarn add nprogress`
 
 src\router\guard\index.ts
+
+## [tailwindcss](https://tailwindcss.com/docs/installation)
+
+`yarn add tailwindcss postcss -D`
+
+postcss.config.js
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+src\main.ts
+
+```js
+import '/@/design/tailwind.css';
+```
+
+src\design\tailwind.css
+
+```css
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+[autoprefixer](https://www.npmjs.com/package/autoprefixer)
+
+> PostCSS plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use. 
+
+`yarn add autoprefixer -D`
+
+## [path-to-regexp](https://www.npmjs.com/package/path-to-regexp)
+
+> https://www.npmjs.com/package/path-to-regexp
+
+`yarn add path-to-regexp`
+
+src\router\menus\index.ts
