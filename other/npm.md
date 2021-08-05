@@ -278,3 +278,22 @@ utils\event\index.ts
 src\components\StrengthMeter\src\StrengthMeter.vue
 
 `import { zxcvbn } from '@zxcvbn-ts/core';`
+
+## [qrcode](https://www.npmjs.com/package/qrcode)
+
+> QR code/2d barcode generator.
+
+`yarn add qrcode`
+`yarn add @types/qrcode -D`
+
+src\components\Qrcode\src\Qrcode.vue
+
+`import { toDataURL } from 'qrcode';`
+
+## [nprogress](https://www.npmjs.com/package/nprogress)
+
+> Slim progress bars
+
+`yarn add nprogress`
+
+src\router\guard\index.ts
