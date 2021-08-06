@@ -116,6 +116,30 @@ VITE_USE_PWA = false
 VITE_LEGACY = false
 ```
 
+### 测试配置
+
+src\App.vue
+
+```js
+<template>
+  <div>{{ vitePort }}</div>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
+  name: "App",
+  setup() {
+    const vitePort = ref(import.meta.env.VITE_PORT);
+    return {
+      vitePort,
+    };
+  },
+});
+</script>
+```
+
 ## 生产环境动态配置
 
 ### 说明
