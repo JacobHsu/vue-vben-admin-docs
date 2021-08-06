@@ -331,6 +331,10 @@ function createSidebar() {
             link: '/guide/settings',
           },
           {
+            text: '配置TS',
+            link: '/guide/vue-ts',
+          },
+          {
             text: '路由',
             link: '/guide/router',
           },
