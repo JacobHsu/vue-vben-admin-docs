@@ -37,3 +37,33 @@ build\generate\icon\index.ts
 `yarn add fs-extra @types/fs-extra -D`  
 `yarn add inquirer @types/inquirer -D`  
 `yarn add @iconify/json -D`  
+
+## vite-plugin-purge-icons
+
+`yarn add @iconify/iconify`  
+`yarn add vite-plugin-purge-icons @iconify/json -D`
+
+build\vite\plugin\index.ts
+
+```js
+import purgeIcons from 'vite-plugin-purge-icons';
+
+  // vite-plugin-purge-icons
+  vitePlugins.push(purgeIcons());
+```
+
+components\Icon\src\Icon.vue
+
+```js
+  import Iconify from '@purge-icons/generated';
+  const svg = Iconify.renderSVG(icon, {});
+```
+
+vite.config.ts
+
+```js
+    optimizeDeps: {
+      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
+      include: [
+        '@iconify/iconify',
+```
