@@ -480,6 +480,107 @@ const { prefixCls } = useDesign('app-logo');
 // prefixCls => vben-app-logo
 ```
 
+### 样式检查
+
+> yarn add stylelint stylelint-config-standard stylelint-config-prettier stylelint-order -D
+
+`stylelint`是对我们编写的样式进行检查的插件。
+
+`stylelint-config-standard`是stylelint扩展的检查标准库。
+
+`stylelint-config-prettier`是用来解决冲突的（估计又和ESLint冲突了，参考之前的prettier）。
+
+`stylelint-order`是检查我们样式编写顺序的。
+
+[stylelint官网](https://stylelint.io/)  
+[stylelint的配置规则](https://stylelint.io/user-guide/rules/list)
+
+stylelint.config.js
+
+```js
+module.exports = {
+  // ↓这个好像是没有用的，但是VbenAdmin是这么写的
+  root: true,
+  // ↓插件
+  plugins: ['stylelint-order'],
+  // ↓扩展
+  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  // ↓自定义规则
+  rules: {},
+  // ↓忽略检查的文件
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
+};
+```
+
+```js
+module.exports = {
+  // ...
+  rules: {
+    // ↓禁止使用未知的伪类选择器。
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global'],
+      },
+    ],
+    // ↓禁止使用未知规则。
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['function', 'if', 'each', 'include', 'mixin'],
+      },
+    ],
+    // ↓禁止空来源。
+    'no-empty-source': null,
+    // ↓禁止使用无效的命名网格区域。
+    'named-grid-areas-no-invalid': null,
+    // ↓要求或不允许使用Unicode字节顺序标记。
+    'unicode-bom': 'never',
+    // ↓禁止较低特异性的选择器在覆盖较高特异性的选择器之后出现。
+    'no-descending-specificity': null,
+    // ↓禁止在字体系列名称列表中缺少通用系列。
+    'font-family-no-missing-generic-family-keyword': null,
+    // ↓在声明的冒号后面需要一个空格或禁止空格。
+    'declaration-colon-space-after': 'always-single-line',
+    // ↓在声明的冒号之前需要一个空格或禁止使用空格。
+    'declaration-colon-space-before': 'never',
+    // ↓在声明块内要求或不允许尾随分号。
+    'declaration-block-trailing-semicolon': 'always',
+    // ↓在规则之前要求或禁止使用空行。
+    'rule-empty-line-before': [
+      'always',
+      {
+        ignore: ['after-comment', 'first-nested'],
+      },
+    ],
+    // ↓禁止使用未知单位。
+    'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
+    // Specify the alphabetical order of the attributes in the declaration block
+    // ↓样式顺序
+    'order/properties-order': [
+      'position',
+      'top',
+      'right',
+      'bottom',
+      'left',
+      'z-index',
+      'display',
+      'float',
+       ...
+    ],
+  },
+  // ...
+};
+```
+
+.stylelintignore
+
+```js
+/dist/*
+/public/*
+public/*
+```
+
 ## 颜色配置
 
 用于预设一些颜色数组
