@@ -1,0 +1,1 @@
+import{o as n,c as s,a as e}from"./app.3590a136.js";const a='{"title":"QA","description":"","frontmatter":{},"relativePath":"other/qa.md","lastUpdated":1628238765204}',o={},t=e('',13);o.render=function(e,a,o,p,c,r){return n(),s("div",null,[t])};export default o;export{a as __pageData};
