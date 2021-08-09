@@ -581,6 +581,27 @@ module.exports = {
 public/*
 ```
 
+### PostCSS
+
+安装两个库`postcss`、`autoprefixer`。要现实的效果就是我们编写一般的样式，渲染都页面的dom节点有面向各种浏览器厂商的样式。
+
+`postcss`就像一个管子。`autoprefixer`是里面的过滤器。你写的`css`从管子中流过，经过他们的处理就出现了不同的结果。
+
+[Vite配置PostCss](https://cn.vitejs.dev/guide/features.html#postcss)  
+[官网postcss](https://postcss.org/)  
+
+> `yarn add postcss autoprefixer -D`
+
+postcss.config.js
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {},
+  },
+};
+```
+
 ## 颜色配置
 
 用于预设一些颜色数组

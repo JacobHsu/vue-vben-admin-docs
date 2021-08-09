@@ -335,6 +335,10 @@ function createSidebar() {
             link: '/guide/vue-ts',
           },
           {
+            text: '配置Vite',
+            link: '/guide/build-vite',
+          },
+          {
             text: '路由',
             link: '/guide/router',
           },

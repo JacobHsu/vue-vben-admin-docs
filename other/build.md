@@ -2,6 +2,8 @@
 
 vite\plugin\theme.ts
 
+> process.cwd() 返回 Node.js 进程的当前工作目录。
+
 ```js
    antdDarkThemePlugin({
       preloadFiles: [
