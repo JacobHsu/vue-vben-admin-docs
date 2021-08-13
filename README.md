@@ -41,3 +41,12 @@ blade-icons/[ri-github-line](https://blade-ui-kit.com/blade-icons/ri-github-line
 
 > [vite] Internal server error: `<template functional>` is no longer supported in Vue 3, since functional components no longer have significant performancedifference from stateful ones. Just use a normal `<template>` instead.
 > Plugin: vite:vue
+
+## debug
+
+✓ building client + server bundles...
+✖ rendering pages...
+build error:
+ TypeError: Invalid value used as weak map key
+
+> 不能 用`<hn></hn>`
