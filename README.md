@@ -20,6 +20,13 @@ vitejs / [docs-cn](https://github.com/vitejs/docs-cn)
 
 `yarn build` .vitepress\dist
 
+git fix
+
+`git reset HEAD~3`  
+`yarn build`  
+`files changes discard`  
+`$ git push -f origin main`  
+
 ## theme
 
 blade-icons/[ri-github-line](https://blade-ui-kit.com/blade-icons/ri-github-line)
