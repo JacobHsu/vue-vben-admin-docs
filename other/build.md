@@ -69,3 +69,54 @@ vite.config.ts
       include: [
         '@iconify/iconify',
 ```
+
+## script
+
+script是用于Vben的动态配置环境变量的。
+
+生成配置文件  
+`build\script\buildConf.ts`  
+
+`yarn add fs-extra @types/fs-extra --dev`
+
+```js
+import fs, { writeFileSync } from 'fs-extra';
+ // ↓创建dist文件夹
+  fs.mkdirp(getRootPath(OUTPUT_DIR));
+  // ↓将字符串写入到dist文件下的指定JS文件名的文件中
+  writeFileSync(getRootPath(`${OUTPUT_DIR}/${configFileName}`), configStr);
+
+export function runBuildConfig() {
+  // ↓获取我们可以配置的环境变量对象
+  const config = getEnvConfig();
+  // ↓获取配置文件的JS名
+  const configFileName = getConfigFileName(config);
+  // ↓创建文件
+  createConfig({ config, configName: configFileName });
+}
+```
+
+[yargs](https://www.npmjs.com/package/yargs)：读取你执行的命令行命令中的参数选项。
+
+```sh
+yarn add yargs --dev
+yarn add @types/yargs --dev
+```
+
+脚本触发文件
+`build\script\postBuild.ts`
+
+[esno](https://www.npmjs.com/package/esno) 命令行执行一个TS文件
+
+TypeScript / ESNext node runtime powered by esbuild
+
+package.json
+
+```js
+    "build": "cross-env NODE_ENV=production vite build && esno ./build/script/postBuild.ts",
+    "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
+```
+
+index.html注入配置文件
+
+`build\vite\plugin\html.ts`
