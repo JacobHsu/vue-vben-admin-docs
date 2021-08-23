@@ -1,1 +1,0 @@
-import{o as a,c as n,a as s}from"./app.e385d985.js";const e='{"title":"fag","description":"","frontmatter":{},"relativePath":"other/faq.md","lastUpdated":1629451140012}',t={},p=s('',3);t.render=function(s,e,t,o,c,r){return a(),n("div",null,[p])};export default t;export{e as __pageData};

@@ -1,0 +1,1 @@
+import{o as n,c as s,a}from"./app.1e087f38.js";const p='{"title":"vite插件","description":"","frontmatter":{},"headers":[{"level":2,"title":"vite-plugin-svg-icon","slug":"vite-plugin-svg-icon"}],"relativePath":"dep/plugin.md","lastUpdated":1629701687711}',t={},o=a('',19);t.render=function(a,p,t,e,c,l){return n(),s("div",null,[o])};export default t;export{p as __pageData};
