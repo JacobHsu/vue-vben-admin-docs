@@ -380,6 +380,10 @@ function createSidebar() {
         text: '深入',
         children: [
           {
+            text: '插件',
+            link: '/dep/plugin',
+          },
+          {
             text: '跨域处理',
             link: '/dep/cors',
           },
