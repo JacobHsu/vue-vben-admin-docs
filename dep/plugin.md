@@ -1,6 +1,6 @@
 # vite插件
 
-## vite-plugin-svg-icon
+## [vite-plugin-svg-icon](https://www.npmjs.com/package/vite-plugin-svg-icons)
 
 当你使用该插件的时候，指定好存放`svg`的文件夹。再按照指定的方式去访问svg图片。就可以再不产生http请求的情况下渲染出`svg`图片。
 
@@ -128,4 +128,57 @@ src\components\Icon\src\SvgIcon.vue
     fill: currentColor;
   }
 </style>
+```
+
+## [vite-plugin-mock](https://www.npmjs.com/package/vite-plugin-mock)
+
+`localEnabled`控制mock开发环境是否启动。  
+如果生产环境想要使用mock，只有`prodEnabled`为`true`，`injectCode`注入指定代码时才会生效。
+
+`yarn add mockjs`  
+`yarn add vite-plugin-mock -D`  
+
+编写Mock用例  
+`mock\_util.ts`：里面封装的是数据请求结构类型。  
+`mock\_createProductionServer.ts`：用于配置生产环境动态Mock的js文件，文档中有说。
+
+配置Mock  
+`build\vite\plugin\mock.ts`
+
+```js
+/**
+ * Mock plugin for development and production.
+ * https://github.com/anncwb/vite-plugin-mock
+ */
+import { viteMockServe } from 'vite-plugin-mock';
+
+export function configMockPlugin(isBuild: boolean) {
+  return viteMockServe({
+    // ↓忽略以_开头的文件
+    ignore: /^\_/,
+    // ↓解析根目录下的mock文件夹
+    mockPath: 'mock',
+    localEnabled: !isBuild,
+    prodEnabled: isBuild,
+    injectCode: `
+      import { setupProdMockServer } from '../mock/_createProductionServer';
+      setupProdMockServer();
+      `,
+  });
+}
+```
+
+配置进Vite
+
+```js
+// ...
+import { configMockPlugin } from './mock';
+
+export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) {
+  // ...
+  // vite-plugin-mock
+  VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild));
+
+  return vitePlugins;
+}
 ```
