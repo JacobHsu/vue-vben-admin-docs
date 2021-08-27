@@ -182,3 +182,36 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) 
   return vitePlugins;
 }
 ```
+
+## [vite-plugin-purge-icons](https://www.npmjs.com/package/vite-plugin-purge-icons)
+
+高效的使用[Iconify](https://iconify.design/)中所有的图标。
+
+`Iconify`各个版本插件的区别：  
+
+* [Vue3版Iconify插件](https://docs.iconify.design/implementations/vue/)：使用时需要安装指定库的图标，然后静态引用。每一次引用都会产生一次http请求。
+* [PurgeIcons](https://github.com/antfu/purge-icons)：将我们所使用的Iconify图标都已html的dom节点形式保存在html中，这样我们就可以不发送http请求就可以使用图标了。
+* [vite-plugin-purge-icons](https://www.npmjs.com/package/vite-plugin-purge-icons)：就是Vite版的PurgeIcons。
+
+安装
+
+`yarn add @iconify/iconify`  
+`yarn add vite-plugin-purge-icons @iconify/json --dev`  
+
+配置Vite  
+
+`build\vite\plugin\index.ts`
+
+```js
+// ...
+import PurgeIcons from 'vite-plugin-purge-icons';
+
+export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
+  // ...
+  // vite-plugin-purge-icons
+  vitePlugins.push(PurgeIcons());
+
+  // ...
+  return vitePlugins;
+}
+```
