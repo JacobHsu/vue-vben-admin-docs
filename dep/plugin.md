@@ -215,3 +215,52 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   return vitePlugins;
 }
 ```
+
+## [vite-plugin-style-import](https://www.npmjs.com/package/vite-plugin-style-import)
+
+`yarn add vite-plugin-style-import -D`  
+
+配置插件
+
+`build\vite\plugin\styleImport.ts`
+
+```js
+/**
+ *  Introduces component library styles on demand.
+ * https://github.com/anncwb/vite-plugin-style-import
+ */
+import styleImport from 'vite-plugin-style-import';
+
+export function configStyleImportPlugin() {
+  // if (!isBuild) return [];
+  const pwaPlugin = styleImport({
+    libs: [
+      {
+        libraryName: 'ant-design-vue',
+        esModule: true,
+        resolveStyle: (name) => {
+          return `ant-design-vue/es/${name}/style/index`;
+        },
+      },
+    ],
+  });
+  return pwaPlugin;
+}
+```
+
+配置Vite
+
+`build\vite\plugin\index.ts`
+
+```js
+// ...
+import { configStyleImportPlugin } from './styleImport';
+
+export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) {
+  // ...
+  // vite-plugin-style-import
+  vitePlugins.push(configStyleImportPlugin());
+
+  return vitePlugins;
+}
+```
