@@ -264,3 +264,82 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) 
   return vitePlugins;
 }
 ```
+
+## [vite-plugin-imagemin](https://www.npmjs.com/package/vite-plugin-imagemin)
+
+一个压缩图片资源的 vite 插件。
+
+配置镜像
+
+package.json
+
+```js
+"resolutions": {
+    "//": "用于安装imagemin的依赖关系，因为中国可能没有安装imagemin。",
+    "bin-wrapper": "npm:bin-wrapper-china"
+},
+```
+
+`yarn add vite-plugin-imagemin -D`
+
+配置插件
+
+`build\vite\plugin\imagemin.ts`
+
+```js
+// Image resource files used to compress the output of the production environment
+// https://github.com/anncwb/vite-plugin-imagemin
+import viteImagemin from 'vite-plugin-imagemin';
+
+export function configImageminPlugin() {
+  const plugin = viteImagemin({
+    gifsicle: {
+      optimizationLevel: 7,
+      interlaced: false,
+    },
+    optipng: {
+      optimizationLevel: 7,
+    },
+    webp: {
+      quality: 75,
+    },
+    mozjpeg: {
+      quality: 8,
+    },
+    pngquant: {
+      quality: [0.8, 0.9],
+      speed: 4,
+    },
+    svgo: {
+      plugins: [
+        {
+          removeViewBox: false,
+        },
+        {
+          removeEmptyAttrs: false,
+        },
+      ],
+    },
+  });
+  return plugin;
+}
+```
+
+配置Vite
+
+`build\vite\plugin\index.ts`
+
+```js
+// ...
+import { configImageminPlugin } from './imagemin';
+
+export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) {
+  // ...
+  if (isBuild) {
+    //vite-plugin-imagemin
+    VITE_USE_IMAGEMIN && vitePlugins.push(configImageminPlugin());
+  }
+
+  return vitePlugins;
+}
+```
