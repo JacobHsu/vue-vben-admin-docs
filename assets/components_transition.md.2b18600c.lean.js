@@ -1,0 +1,1 @@
+import{o as n,c as s,a}from"./app.1e087f38.js";const t='{"title":"Transition","description":"","frontmatter":{},"headers":[{"level":2,"title":"Usage","slug":"usage"}],"relativePath":"components/transition.md","lastUpdated":1630489853264}',p={},o=a('',4);p.render=function(a,t,p,c,e,u){return n(),s("div",null,[o])};export default p;export{t as __pageData};
