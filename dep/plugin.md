@@ -405,3 +405,73 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) 
   return vitePlugins;
 }
 ```
+
+## [vite-plugin-pwa](https://www.npmjs.com/package/vite-plugin-pwa)
+
+[Progressive web apps (PWAs)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+
+`yarn add vite-plugin-pwa -D`
+
+配置插件
+
+`build\vite\plugin\pwa.ts`
+
+```js
+/**
+ * Zero-config PWA for Vite
+ * https://github.com/antfu/vite-plugin-pwa
+ */
+import type { ViteEnv } from '../../utils';
+
+import { VitePWA } from 'vite-plugin-pwa';
+
+export function configPwaConfig(env: ViteEnv) {
+  const { VITE_USE_PWA, VITE_GLOB_APP_TITLE, VITE_GLOB_APP_SHORT_NAME } = env;
+
+  if (VITE_USE_PWA) {
+    // vite-plugin-pwa
+    const pwaPlugin = VitePWA({
+      manifest: {
+        name: VITE_GLOB_APP_TITLE,
+        short_name: VITE_GLOB_APP_SHORT_NAME,
+        icons: [
+          {
+            // ./表示public文件夹
+            src: './resource/img/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: './resource/img/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    });
+    return pwaPlugin;
+  }
+  return [];
+}
+```
+
+配置Vite
+
+`build\vite\plugin\index.ts`
+
+```js
+// ...
+import { configPwaConfig } from './pwa';
+
+export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean, pkg: any) {
+  // ...
+  // The following plugins only work in the production environment
+  if (isBuild) {
+    // ...
+    // vite-plugin-pwa
+    vitePlugins.push(configPwaConfig(viteEnv));
+  }
+
+  return vitePlugins;
+}
+```
