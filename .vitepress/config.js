@@ -384,6 +384,10 @@ function createSidebar() {
             link: '/dep/plugin',
           },
           {
+            text: 'package',
+            link: '/dep/package',
+          },
+          {
             text: '跨域处理',
             link: '/dep/cors',
           },
